@@ -171,6 +171,19 @@ curl -X POST http://localhost:3000/identify \
          }'
 ```
 
+
+#### Render URL : https://identity-reconciliation-nqnc.onrender.com
+
+You can use :-
+
+```bash
+curl -X POST https://identity-reconciliation-nqnc.onrender.com/identify \
+     -H "Content-Type: application/json" \
+     -d '{
+           "email": "example@example.com",
+           "phoneNumber": "1234567890"
+         }'
+```
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request for any changes.
