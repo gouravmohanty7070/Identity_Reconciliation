@@ -1,4 +1,3 @@
-```markdown
 # Identity Reconciliation Service
 
 ## Table of Contents
@@ -12,7 +11,6 @@
 - [API Endpoints](#api-endpoints)
 - [Testing the API](#testing-the-api)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Project Description
 
@@ -47,41 +45,38 @@ The Identity Reconciliation Service is designed to consolidate customer identiti
    ```bash
    git clone https://github.com/yourusername/identity-reconciliation.git
    cd identity-reconciliation
-   ```
-
+   
 2. **Install Dependencies**
 
    ```bash
    npm install
-   ```
 
 3. **Setup Environment Variables**
 
-   Create a `.env` file in the root of the project and add your PostgreSQL database URL and port.
+   Create a .env file in the root of the project and add your PostgreSQL database URL and port.
 
-   ```env
+   ```bash
    DATABASE_URL=postgres://username:password@localhost:5432/yourdatabase
    PORT=3000
-   ```
 
 4. **Run Database Migrations**
 
-   Ensure your database is set up and synchronized.
-
    ```bash
    npm run migrate
-   ```
 
 5. **Start the Development Server**
 
    ```bash
    npm run dev
-   ```
 
 ## Environment Variables
 
-- `DATABASE_URL`: URL of the PostgreSQL database.
-- `PORT`: Port number for the server.
+- **DATABASE_URL**: URL of the PostgreSQL database.
+- **PORT**: Port number for the server.
+
+## Database Schema
+
+The contacts table schema:
 
 ## Database Schema
 
@@ -132,46 +127,51 @@ You can test the API using `curl` or Postman.
 
 ### Using `curl`
 
-1. **With Email and Phone Number**
+#### With Email and Phone Number
 
-   ```bash
-   curl -X POST http://localhost:3000/identify \
-        -H "Content-Type: application/json" \
-        -d '{
-              "email": "mcfly@hillvalley.edu",
-              "phoneNumber": "123456"
-            }'
-   ```
+```bash
+curl -X POST http://localhost:3000/identify \
+     -H "Content-Type: application/json" \
+     -d '{
+           "email": "mcfly@hillvalley.edu",
+           "phoneNumber": "123456"
+         }'
+```
 
-2. **With Only Phone Number**
+#### With Only Phone Number
 
-   ```bash
-   curl -X POST http://localhost:3000/identify \
-        -H "Content-Type: application/json" \
-        -d '{
-              "email": null,
-              "phoneNumber": "123456"
-            }'
-   ```
+```bash
+curl -X POST http://localhost:3000/identify \
+     -H "Content-Type: application/json" \
+     -d '{
+           "email": null,
+           "phoneNumber": "123456"
+         }'
+```
 
-3. **With Only Email**
+#### With Only Email
 
-   ```bash
-   curl -X POST http://localhost:3000/identify \
-        -H "Content-Type: application/json" \
-        -d '{
-              "email": "lorraine@hillvalley.edu",
-              "phoneNumber": null
-            }'
-   ```
+```bash
+curl -X POST http://localhost:3000/identify \
+     -H "Content-Type: application/json" \
+     -d '{
+           "email": "lorraine@hillvalley.edu",
+           "phoneNumber": null
+         }'
+```
 
-4. **With New Information (New Email and Same Phone Number)**
+#### With New Information (New Email and Same Phone Number)
 
-   ```bash
-   curl -X POST http://localhost:3000/identify \
-        -H "Content-Type: application/json" \
-        -d '{
-              "email": "george@hillvalley.edu",
-              "phoneNumber": "717171"
-            }'
-   ```
+```bash
+curl -X POST http://localhost:3000/identify \
+     -H "Content-Type: application/json" \
+     -d '{
+           "email": "george@hillvalley.edu",
+           "phoneNumber": "717171"
+         }'
+```
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any changes.
+
