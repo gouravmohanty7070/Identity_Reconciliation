@@ -43,7 +43,7 @@ The Identity Reconciliation Service is designed to consolidate customer identiti
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/identity-reconciliation.git
+   git clone https://github.com/gouravmohanty7070/Identity_Reconciliation.git
    cd identity-reconciliation
    
 2. **Install Dependencies**
